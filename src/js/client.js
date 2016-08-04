@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Layout from "./components/Layout";
+import App from "./components/App";
 
 import books from "./data/books"
 // convert data to client format
@@ -11,4 +11,4 @@ const bookList = Object.keys(books.books).map(key => {
 });
 
 const app = document.getElementById('app');
-ReactDOM.render(<Layout books={bookList}/>, app);
+ReactDOM.render(<App books={bookList}/>, app);

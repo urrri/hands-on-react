@@ -1,12 +1,12 @@
-import React from "react";
+import React, { Component } from 'react';
 
-export default class Bookshelf extends React.Component {
+export default class Bookshelf extends Component {
     render() {
-        var book = this.props.books[0];
+        const {bookId, title, author, rating, cover} = this.props.books[0];
         return (
             <div class="bookshelf">
-                {book.title
-                    /*<Book bookId={book.bookId} title={book.title} author={book.author} rating={book.rating} cover={book.cover}/>*/}
+                {title}
+                {/*<BookCard bookId={bookId} title={title} author={author} rating={rating} cover={cover}/>*/}
             </div>
         );
     }
