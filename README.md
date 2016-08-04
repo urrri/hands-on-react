@@ -6,9 +6,9 @@ Material for a hands-on on ReactJS library.
 - making a react **simple component**
 - making a react **component**
 - **jsx** basics
+- components **props**
 
 ####[step 2](https://github.com/urrri/hands-on-react/tree/step2)
-- components **props**
 - props **validation**
 - component **lists**
 
