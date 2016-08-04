@@ -1,7 +1,7 @@
 # HANDS-ON REACT 
 
 ```sh
-git checkout step-1
+git checkout step1
 ```
 
 ## Step 1
@@ -13,54 +13,54 @@ git checkout step-1
 
 ### Step 1.A
 
-Find following comments inside App.js which define the Header component markup:
+Find following comments inside `src/js/components/App.js`:
 
 ```html
 {/* begin Header.js */}
 <header class="header">Bookshelf</header>
 {/* end Header.js */}
 ```
+It defines the **Header** component markup.
 
-Create simple component using it. It means this markup should go inside `src/js/components/Header.js`:
+Create simple component using this markup. It means the markup should go inside `src/js/components/Header.js`:
 
 ```javascript
  export default () => <header class="header">Bookshelf</header>
 ```
 
-Do not forget to import component from created file as:
+Do not forget to import new component as following:
 
 ```javascript
 import Header from "./Header"
 ```
 
-Replace initial markup with new component
+Replace initial markup with the new component
 
 ### Step 1.B
  
-Look at Bookshelf.js. 
-In function render() you can see following lines:
+Find following lines inside `src/js/components/Bookshelf.js`:
 
-```html
+```javascript
 {title}
 {/*<BookCard bookId={bookId} title={title} author={author} rating={rating} cover={cover}/>*/}
 ```
 
-Remove the first one and `{/* */}` from the second
+- Remove the first line. Strip `{/*` and `*/}` from the second one.
+- Create new **BookCard** component using `class` syntax.
+- Render each of the props inside separate tag and apply class with the same name as the prop. e.g. 
+```html
+<div className="title">{this.props.title}</div>
+```
+- Set class **book** to the root tag of the component.
+- Add local styles if you want.
+- Import new component inside `src/js/components/Bookshelf.js`
 
-Create new BookCard component using class syntax. 
-Render each passed props inside separate element and apply class named as the prop 
-(e.g. `<div class="title">{this.props.title}</div`)
-Set class 'book' to the root element.
-Add local styles if you want.
-
-Import new component in Bookshelf.js
-
-Finally you should see single book card. 
+Finally you should see a single book card. 
 
 ### Step 1.C (optional)
 
-Transform `Header` component so it would be able to received title via props. 
-Change App.js to pass the title. 
+Modify **Header** component to make it configurable via props. 
+Pass necessary props (e.g. title) from `src/js/components/App.js`. 
 
 ####[step 2](https://github.com/urrri/hands-on-react/tree/step2)
 - props **validation**
