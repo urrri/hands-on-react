@@ -13,60 +13,77 @@ git checkout step1
 
 ### Step 1.A
 
-Find following comments inside `src/js/components/App.js`:
+#### Create simple component, use **props**
+
+- Find following comments inside `src/js/components/App.js`:
 
 ```html
-{/* begin Header.js */}
-<header class="header">Bookshelf</header>
-{/* end Header.js */}
+{/* step 1.A - begin Footer.js */}
+<footer class="footer">Total: 1</footer>
+{/* end Footer.js */}
 ```
-It defines the **Header** component markup.
 
-Create simple component using this markup. It means the markup should go inside `src/js/components/Header.js`:
+It defines the **Footer** component markup.
+
+- Create simple (function-style) component using this markup. It means the markup should go inside `src/js/components/Footer.js`.
+For reference see Header implementation
+
+- Do not forget to add import for the new component in `src/js/components/App.js` as following:
 
 ```javascript
- export default () => <header class="header">Bookshelf</header>
+import Footer from "./Footer"
 ```
 
-Do not forget to import new component as following:
-
-```javascript
-import Header from "./Header"
-```
-
-Replace initial markup with the new component
+- Replace initial markup with the new component: `<Footer/>`
+- Add attribute `count` to the `Footer` tag and pass there book count: `this.props.books.length` (for reference see sibling tags)
+- Inside **Footer** component replace `Total: 1` with passed `count` (for reference see **Header** component, `title` property)
+  
+Finally you should see footer with 10 books.
 
 ### Step 1.B
- 
-Find following lines inside `src/js/components/Bookshelf.js`:
+
+#### Create **BookCard** component
+
+- Find following lines inside `src/js/components/Bookshelf.js`:
 
 ```javascript
-{title}
-{/*<BookCard bookId={bookId} title={title} author={author} rating={rating} cover={cover}/>*/}
+{book.title}
+{/*
+<div class="bookshelf-item">
+    <BookCard {...book}/>
+</div >
+*/}
 ```
 
-- Remove the first line. Strip `{/*` and `*/}` from the second one.
-- Create new **BookCard** component using `class` syntax.
-- Render each of the props inside separate tag and apply class with the same name as the prop. e.g. 
+- Remove the first line. Uncomment other code by striping `{/*` and `*/}`.
+- Create new **BookCard** component using `class` syntax. (Create it in `src/js/components/BookCard.js`) 
+- Render each of the given props (title, author, rating, cover) inside separate tag and apply class with the name of the prop. e.g. 
+
 ```html
 <div className="title">{this.props.title}</div>
 ```
-- Set class **book** to the root tag of the component.
-- Add local styles if you want.
-- Import new component inside `src/js/components/Bookshelf.js`
+
+- Render `cover` as following:
+
+```html
+<div class="cover">
+    <img src={this.props.cover}/>
+</div>
+```
+
+- Apply class **`book`** to the root tag of the component.
+- Add `import` statement for the new component inside `src/js/components/Bookshelf.js`
 
 Finally you should see a single book card. 
 
-### Step 1.C (optional)
-
-Modify **Header** component to make it configurable via props. 
-Pass necessary props (e.g. title) from `src/js/components/App.js`. 
 
 ####[step 2](https://github.com/urrri/hands-on-react/tree/step2)
-- props **validation**
 - component **lists**
+- props **validation**
+- using dynamic **class**
+
 
 ####[step 3](https://github.com/urrri/hands-on-react/tree/step3)
 - using **events**
 - using component **state**
-
+- using dynamic local **style**
