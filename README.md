@@ -55,7 +55,7 @@ Finally you should see footer with 10 books.
 */}
 ```
 
-- Remove the first line. Uncomment other code by striping `{/*` and `*/}`.
+- Remove the first line. Uncomment other code by stripping `{/*` and `*/}`.
 - Create new **BookCard** component using `class` syntax. (Create it in `src/js/components/BookCard.js`) 
 - Render each of the given props (title, author, rating, cover) inside separate tag and apply class with the name of the prop. e.g. 
 
