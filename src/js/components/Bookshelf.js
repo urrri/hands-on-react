@@ -10,8 +10,9 @@ export default class Bookshelf extends Component {
         };
 
         const cards = books.map((book) => {
+            const {bookId} = book;
             return (
-                <div key={book.bookId} class="bookshelf-item" style={cardStyle}>
+                <div key={bookId} class="bookshelf-item" style={cardStyle}>
                     <BookCard {...book}/>
                     <button class="delete" onClick={onRemoveBook.bind(null, bookId)}>&#x2716;</button>
                 </div >
