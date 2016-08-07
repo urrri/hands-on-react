@@ -1,17 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 
+import BookCard from "./BookCard"
+
 export default class Bookshelf extends Component {
     render() {
         const {books:[book], layout} = this.props;
 
         return (
             <div class={"bookshelf " + layout}>
-                {book.title}
-                {/*
                 <div class="bookshelf-item">
                     <BookCard {...book}/>
                 </div >
-                 */}
             </div>
         );
     }
