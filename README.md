@@ -1,44 +1,51 @@
 # HANDS-ON REACT 
 
 ```sh
-git checkout step2
+git checkout step3
 ```
 
-## Step 2
+## Step 3
 
-- component **lists**
-- props **validation**
-- using dynamic **class**
+- using **events**
+- using component **state**
+- using dynamic local **style**
 
-### Step 2.A
+### Step 3.A
 
-#### Create list of books
-- Find tag that has `bookshelf-item` class ( inside `src/js/components/Bookshelf.js` )
-- Map `props.books` array to array of tags like in following example:
+#### Zoom Card
+- Find plus and minus buttons in **Header** component
+- Handle onClick events on the buttons and fire events up (for reference see sibling buttons)
+- Handle fired events in the **App** component (for reference see **onChangeLayout** handler)
+  - NOTE: don't forget `bind(this)` to the event handler
+- Add constructor to **App** component; remember to call super();
+  - Initialize state in the `constructor`, add `cardZoom` to state, set it to 1;
+- In the event handler calculate zoom and update it in the state using `setState`
+- Pass `state.cardZoom` to **Bookshelf** as `cardZoom`
+- Inside **Bookshelf** in `render` function create style and add CSS property `zoom` initialized with `props.cardZoom` value like following
 ```javascript
-const tagArray = dataArray.map((item, idx) => <tag key={idx}>{item.data}</tag >;
+const cardStyle = {
+    zoom: this.props.cardZoom
+};
 ```
-  - Use found tag as template
-  - NOTE: make sure you add key attribute with unique value (e.g. index, bookId) to the root tag of each item
-- Replace found tag with generated array of tags like following: `{tagArray}`
-    
-You should see list of book cards
+- Apply created style to the tag that has `bookshelf-item` class
 
-### Step 2.B
+Now plus and minus buttons should zoom book cards.
 
-#### Validate **BookCard** `props`
-- Add `propTypes` to **BookCard** component (for reference see `propTypes` inside `src/js/components/Bookshelf.js`)
+### Step 3.B
 
-There are no visual effects :-(
+#### Delete Card
+- Add **delete** button to each bookcard holder after **BookCard** as following:
+```html
+<button class="delete">&#x2716;</button>
+```
+- Handle `onClick` and fire `onRemoveBook` event up with `bookId`.
+- Handle fired event in the **App** component
+  - NOTE: don't forget `bind(this)` to the event handler
+- Add props to **`App.constructor`** parameters (pass to super too).
+  - Initialize books state with `props.books`; replace usage of `props.books` by `state.books`.
+- In `onRemoveBook` handler filter books to remove book with received `bookId`
+- Use `setState` to apply filtered books list back to `state`
 
-### Step 2.C
-
-#### Visualize Rating
-- Find tag that renders rating in **BookCard** component. It should have the class `rating`
-- Modify it so it will have additional class with name `rating-#`, where # is the numeric value of `props.rating` (e.g. `rating-4`)
-  - for reference see `layout` inside `src/js/components/Bookshelf.js` 
-  
-You should see green stars for books that have rating  <span style="color:green">&#x2605;&#x2605;&#x2605;</span>
 
 
 ####[step 1](https://github.com/urrri/hands-on-react/tree/step1)
@@ -47,7 +54,8 @@ You should see green stars for books that have rating  <span style="color:green"
 - **jsx** basics
 - components **props**
 
-####[step 3](https://github.com/urrri/hands-on-react/tree/step3)
-- using **events**
-- using component **state**
-- using dynamic local **style**
+####[step 2](https://github.com/urrri/hands-on-react/tree/step2)
+- props **validation**
+- using dynamic **class**
+- component **lists**
+
