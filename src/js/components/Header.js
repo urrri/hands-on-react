@@ -4,8 +4,8 @@ const Header = (props) => {
     return (
         <header class="header">
             {props.title}
-            <button >+</button>
-            <button >&minus;</button>
+            <button onClick={props.onChangeZoom.bind(null, 1)}>+</button>
+            <button onClick={props.onChangeZoom.bind(null, -1)}>&minus;</button>
             <button onClick={props.onChangeLayout.bind(null, "list")}>List</button>
             <button onClick={props.onChangeLayout.bind(null, "grid")}>Grid</button>
         </header>
@@ -22,7 +22,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-    onChangeLayout: ()=> {}
+    onChangeLayout: ()=>{}
 };
 
 

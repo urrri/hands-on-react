@@ -4,11 +4,14 @@ import BookCard from "./BookCard"
 
 export default class Bookshelf extends Component {
     render() {
-        const {books, layout} = this.props;
+        const {books, cardZoom, layout} = this.props;
+        const cardStyle = {
+            zoom: cardZoom
+        };
 
         const cards = books.map((book) => {
             return (
-                <div key={book.bookId} class="bookshelf-item">
+                <div key={book.bookId} class="bookshelf-item" style={cardStyle}>
                     <BookCard {...book}/>
                 </div >
             );
