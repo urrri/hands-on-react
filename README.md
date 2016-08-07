@@ -55,7 +55,8 @@ Now plus and minus buttons should zoom book cards.
 - components **props**
 
 ####[step 2](https://github.com/urrri/hands-on-react/tree/step2)
+- component **lists**
 - props **validation**
 - using dynamic **class**
-- component **lists**
+
 
