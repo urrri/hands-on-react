@@ -1,4 +1,4 @@
-# HANDS-ON REACT 
+# HANDS-ON REACT
 
 Material for a hands-on on ReactJS library.
 
@@ -9,10 +9,12 @@ Material for a hands-on on ReactJS library.
 - components **props**
 
 ####[step 2](https://github.com/urrri/hands-on-react/tree/step2)
-- props **validation**
 - component **lists**
+- props **validation**
+- using dynamic **class**
 
 ####[step 3](https://github.com/urrri/hands-on-react/tree/step3)
 - using **events**
 - using component **state**
+- using dynamic local **style**
 
