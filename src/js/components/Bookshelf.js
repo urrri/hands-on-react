@@ -4,13 +4,18 @@ import BookCard from "./BookCard"
 
 export default class Bookshelf extends Component {
     render() {
-        const {books:[book], layout} = this.props;
+        const {books, layout} = this.props;
 
-        return (
-            <div class={"bookshelf " + layout}>
-                <div class="bookshelf-item">
+        const cards = books.map((book) => {
+            return (
+                <div key={book.bookId} class="bookshelf-item">
                     <BookCard {...book}/>
                 </div >
+            );
+        });
+        return (
+            <div class={"bookshelf " + layout}>
+                {cards}
             </div>
         );
     }
