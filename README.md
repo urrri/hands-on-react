@@ -14,8 +14,11 @@ git checkout step4
 
 - Find `filter` state inside **App** component - it reflects search string from **Header**
 - Pass it to the **Bookshelf**
+
 In the **Bookshelf** we need to filter books list, but doing it in the `render` is huge overhead.
-So we can use `componentWillReceiveProps` lyfe-cycle event. 
+
+For this purpose exists `componentWillReceiveProps` lyfe-cycle event. 
+
 - Initialize state for **Bookshelf** with books (`constructor`, `props`; see `App.js`) 
 - Override `componentWillReceiveProps` for **Bookshelf** and filter received books with received filter.
   Put results to state (You don't need to use setState)
