@@ -3,8 +3,20 @@ import React, { Component, PropTypes } from 'react';
 import BookCard from "./BookCard"
 
 export default class Bookshelf extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            books: props.books
+        }
+    }
+
+    componentWillReceiveProps(newProps) {
+        this.state.books = newProps.books.filter((book) => !newProps.filter || book.title.indexOf(newProps.filter) >= 0 || (book.author && book.author.indexOf(newProps.filter) >= 0) );
+    }
+
     render() {
-        const {books, cardZoom, layout, onRemoveBook} = this.props;
+        const {cardZoom, layout, onRemoveBook} = this.props;
+        const {books} = this.state;
         const cardStyle = {
             zoom: cardZoom
         };

@@ -19,11 +19,11 @@ export default class App extends Component {
     }
 
     render() {
-        const {books, cardZoom, layout} = this.state;
+        const {books, cardZoom, layout, filter} = this.state;
         return (
             <div class="app">
                 <Header title="Bookshelf" onChangeZoom={this.changeZoom.bind(this)} onChangeLayout={this.changeLayout.bind(this)} onChangeSearch={this.filterBooks.bind(this)}/>
-                <Bookshelf books={books} cardZoom={cardZoom} layout={layout} onRemoveBook={this.removeBook.bind(this)}/>
+                <Bookshelf books={books} cardZoom={cardZoom} layout={layout} onRemoveBook={this.removeBook.bind(this)} filter={filter}/>
                 <Footer count={books.length}/>
             </div>
         );
