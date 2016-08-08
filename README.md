@@ -2,6 +2,21 @@
 
 Material for a hands-on on ReactJS library.
 
+### Preparations
+
+> make sure **[git](https://git-scm.com/downloads)**, **[node](https://nodejs.org/en/)** and **npm** are installed
+
+Get project from GitHub, install dependencies and start server
+```sh
+$ git clone https://github.com/urrri/hands-on-react.git
+$ cd hands-on-react
+
+$ npm install
+
+$ npm run dev
+```
+### Start here
+
 ####[step 1](https://github.com/urrri/hands-on-react/tree/step1)
 - making a react **simple component**
 - making a react **component**
