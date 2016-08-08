@@ -4,6 +4,7 @@ const Header = (props) => {
     return (
         <header class="header">
             {props.title}
+            <input onChange={props.onChangeSearch} placeholder="Find Book" type="search"/>
             <button onClick={props.onChangeZoom.bind(null, 1)}>+</button>
             <button onClick={props.onChangeZoom.bind(null, -1)}>&minus;</button>
             <button onClick={props.onChangeLayout.bind(null, "list")}>List</button>

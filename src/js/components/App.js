@@ -12,15 +12,17 @@ export default class App extends Component {
         this.state = {
             books: [...this.props.books],
             cardZoom: 1,
-            layout:'grid'
+            layout:'grid',
+            filter:''
         };
+        this.filterBooks = this.filterBooks.bind(this);
     }
 
     render() {
         const {books, cardZoom, layout} = this.state;
         return (
             <div class="app">
-                <Header title="Bookshelf" onChangeZoom={this.changeZoom.bind(this)} onChangeLayout={this.changeLayout.bind(this)}/>
+                <Header title="Bookshelf" onChangeZoom={this.changeZoom.bind(this)} onChangeLayout={this.changeLayout.bind(this)} onChangeSearch={this.filterBooks.bind(this)}/>
                 <Bookshelf books={books} cardZoom={cardZoom} layout={layout} onRemoveBook={this.removeBook.bind(this)}/>
                 <Footer count={books.length}/>
             </div>
@@ -39,5 +41,10 @@ export default class App extends Component {
 
     changeLayout(layout){
         this.setState({layout});
+    }
+
+    filterBooks(e){
+        const filter = e.target.value;
+        this.setState({filter});
     }
 }

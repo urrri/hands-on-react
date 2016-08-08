@@ -1,21 +1,27 @@
-# HANDS-ON REACT
+# HANDS-ON REACT 
 
-Material for a hands-on on ReactJS library.
-
-### Preparations
-
-> make sure **[git](https://git-scm.com/downloads)**, **[node](https://nodejs.org/en/)** and **npm** are installed
-
-Get project from GitHub, install dependencies and start server
 ```sh
-$ git clone https://github.com/urrri/hands-on-react.git
-$ cd hands-on-react
-
-$ npm install
-
-$ npm run dev
+git checkout step4
 ```
-### Start here
+
+## Step 4
+
+- using **Life-cycle events**
+
+### Step 4.A
+
+#### Searching books
+
+- Find `filter` state inside **App** component - it reflects search string from **Header**
+- Pass it to the **Bookshelf**
+In the **Bookshelf** we need to filter books list, but doing it in the `render` is huge overhead.
+So we can use `componentWillReceiveProps` lyfe-cycle event. 
+- Initialize state for **Bookshelf** with books (`constructor`, `props`; see `App.js`) 
+- Override `componentWillReceiveProps` for **Bookshelf** and filter received books with received filter.
+  Put results to state (You don't need to use setState)
+  
+Finally typing text in search field should filter books
+
 
 ####[step 1](https://github.com/urrri/hands-on-react/tree/step1)
 - making a react **simple component**
@@ -32,4 +38,6 @@ $ npm run dev
 - using **events**
 - using component **state**
 - using dynamic local **style**
+
+
 
