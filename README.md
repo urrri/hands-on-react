@@ -1,6 +1,6 @@
 # HANDS-ON REACT
 
-Material for a hands-on on ReactJS library.
+Material for a hands-on ReactJS library.
 
 ### Preparations
 
@@ -15,6 +15,11 @@ $ npm install
 
 $ npm run dev
 ```
+
+### [Presentation](https://goo.gl/mu2q8D)
+
+
+
 ### Start here
 
 ####[step 1](https://github.com/urrri/hands-on-react/tree/step1)
